@@ -10,10 +10,10 @@ from scipy.optimize import minimize
 app = Flask(__name__)
 
 # Load saved models and encoders
-clf = joblib.load('C://Users//Norhan//Downloads//ProjectHM//nmodels//fitness_goal_classifier.pkl')  # Load your saved classifier model
-regressor = joblib.load('C://Users//Norhan//Downloads//ProjectHM//nmodels//calories_burned_regressor.pkl')  # Load your saved regressor model
-scaler = joblib.load('C://Users//Norhan//Downloads//ProjectHM//nmodels//scaler.pkl')  # Load scaler used for normalizing data
-label_encoders = joblib.load('C://Users//Norhan//Downloads//ProjectHM//nmodels//label_encoders.pkl')  # Load label encoders
+clf = joblib.load('models/fitness_goal_classifier.pkl')  # Load your saved classifier model
+regressor = joblib.load('models/calories_burned_regressor.pkl')  # Load your saved regressor model
+scaler = joblib.load('models/scaler.pkl')  # Load scaler used for normalizing data
+label_encoders = joblib.load('models/label_encoders.pkl')  # Load label encoders
 
 # Features for classification and regression
 level1_features = ['Age', 'Gender', 'BMI', 'Workout_Frequency (days/week)',
@@ -145,3 +145,4 @@ def home():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
